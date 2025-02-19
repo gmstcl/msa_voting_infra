@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: external-dns
+  namespace: argocd
+spec:
+  destination:
+    namespace: vote
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://github.com/dispiny/msa_voting_infra.git
+    targetRevision: HEAD
+    path: manifest/infra/external-dns/
+  project: default
+  syncPolicy:
+    automated:
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true
