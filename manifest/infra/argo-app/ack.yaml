@@ -9,9 +9,9 @@ spec:
     server: https://kubernetes.default.svc
   sources:
     - path: ''
-      repoURL: oci://public.ecr.aws/aws-controllers-k8s/secretsmanager-chart
+      repoURL: https://github.com/aws-controllers-k8s/secretsmanager-controller
       targetRevision: 1.0.3
-      # chart: secretsmanager-chart
+      chart: secretsmanager-chart
       helm:
         values: |-
           aws:
@@ -19,7 +19,7 @@ spec:
 
           serviceAccount:
             create: false
-
+            
   project: default
   syncPolicy:
     syncOptions:

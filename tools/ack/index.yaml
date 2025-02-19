@@ -1,0 +1,27 @@
+apiVersion: v1
+entries:
+  secretsmanager-chart:
+  - apiVersion: v1
+    appVersion: 1.0.3
+    created: "2025-02-19T10:25:42.101788521Z"
+    description: A Helm chart for the ACK service controller for AWS Secrets Manager
+      (SecretsManager)
+    digest: 5be3e2cb37b702d21274476356f6a99ee446544dfa34dbec443b4843b4d61076
+    home: https://github.com/aws-controllers-k8s/secretsmanager-controller
+    icon: https://raw.githubusercontent.com/aws/eks-charts/master/docs/logo/aws.png
+    keywords:
+    - aws
+    - kubernetes
+    - secretsmanager
+    maintainers:
+    - name: ACK Admins
+      url: https://github.com/orgs/aws-controllers-k8s/teams/ack-admin
+    - name: SecretsManager Admins
+      url: https://github.com/orgs/aws-controllers-k8s/teams/secretsmanager-maintainer
+    name: secretsmanager-chart
+    sources:
+    - https://github.com/aws-controllers-k8s/secretsmanager-controller
+    urls:
+    - https://github.com/dispiny/msa_voting_infra/manifest/tools/ack/secretsmanager-chart-1.0.3.tgz
+    version: 1.0.3
+generated: "2025-02-19T10:25:42.10016435Z"
