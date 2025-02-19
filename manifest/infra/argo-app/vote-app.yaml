@@ -20,6 +20,9 @@ spec:
       targetRevision: HEAD
       path: manifest/app/overlay/prod/vote/
 
+    - repoURL: https://github.com/dispiny/msa_voting_infra.git
+      targetRevision: HEAD
+      path: manifest/app/overlay/prod/infra/
   project: default
   syncPolicy:
     automated:
