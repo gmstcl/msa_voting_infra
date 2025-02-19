@@ -18,6 +18,6 @@ spec:
       - name: voting
         $patch: delete
       - name: vote
-        image: 226347592148.dkr.ecr.ap-northeast-1.amazonaws.com/vote
+        image: 226347592148.dkr.ecr.ap-northeast-2.amazonaws.com/vote
         ports:
         - containerPort: 80
