@@ -1,6 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: deployment
+$patch: delete
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
   name: worker-deployment
   labels:
     version: "1.0"
