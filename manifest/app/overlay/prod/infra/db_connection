@@ -1,0 +1,1 @@
+{"db_host": "10.0.144.23","db_user": "postgres","db_password": "postgres","db_port": "5432","redis_host": "10.0.144.23","redis_port": "6379"}

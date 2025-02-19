@@ -7,6 +7,11 @@ resources:
 patchesStrategicMerge:
   - delete-manifest.yaml
 
+secretGenerator:
+- name: vote-secrets
+  files:
+  - db_connection
+
 patches:
   - path: ingress.yaml
     target:
