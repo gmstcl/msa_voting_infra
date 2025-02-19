@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   sources:
     - path: ''
-      repoURL: https://github.com/aws-controllers-k8s/secretsmanager-controller
+      repoURL: https://github.com/dispiny/msa_voting_infra/raw/refs/heads/master/tools/ack/
       targetRevision: 1.0.3
       chart: secretsmanager-chart
       helm:
