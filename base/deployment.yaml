@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+  labels:
+    app: voting
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: voting
+  template:
+    metadata:
+      labels:
+        app: voting
+    spec:
+      containers:
+      - name: voting
+        image: 226347592148.dkr.ecr.ap-northeast-1.amazonaws.com/result
+        ports:
+        - containerPort: 80

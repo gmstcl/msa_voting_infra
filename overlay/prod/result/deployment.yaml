@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: result-deployment
+  labels:
+    version: 1.0
+spec:
+  selector:
+    matchLabels:
+      type: result
+  template:
+    metadata:
+      labels:
+        version: 1.0
+        type: result
+    spec:
+      containers:
+      - name: voting
+        $patch: delete
+      - name: result
+        image: 226347592148.dkr.ecr.ap-northeast-1.amazonaws.com/result
+        ports:
+        - containerPort: 80

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker-deployment
+  labels:
+    version: 1.0
+spec:
+  selector:
+    matchLabels:
+      type: worker
+  template:
+    metadata:
+      labels:
+        version: 1.0
+        type: worker
+    spec:
+      containers:
+      - name: voting
+        $patch: delete
+      - name: worker
+        image: 226347592148.dkr.ecr.ap-northeast-1.amazonaws.com/worker
+        ports:
+        - containerPort: 80

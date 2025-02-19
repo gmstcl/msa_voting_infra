@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vote-deployment
+  labels:
+    version: 1.0
+spec:
+  selector:
+    matchLabels:
+      type: vote
+  template:
+    metadata:
+      labels:
+        version: 1.0
+        type: vote
+    spec:
+      containers:
+      - name: voting
+        $patch: delete
+      - name: vote
+        image: 226347592148.dkr.ecr.ap-northeast-1.amazonaws.com/vote
+        ports:
+        - containerPort: 80
