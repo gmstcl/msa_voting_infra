@@ -13,5 +13,9 @@ patches:
     target:
       kind: Service
       name: service
+  - path: ingress.yaml
+    target:
+      kind: Ingress
+      name: voting-alb
 namePrefix: vote-
 namespace: vote
