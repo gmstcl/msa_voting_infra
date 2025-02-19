@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ack
+  namespace: argocd
+spec:
+  destination:
+    namespace: ack-system
+    server: https://kubernetes.default.svc
+  sources:
+    - path: ''
+      repoURL: https://github.com/aws-controllers-k8s/secretsmanager-controller
+      targetRevision: 1.0.3
+      chart: secretsmanager-chart
+      helm:
+        values: |-
+          aws:
+            region: "ap-northeast-1'
+
+          serviceAccount:
+            create: false
+            
+  project: default
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      prune: false
+      selfHeal: true
