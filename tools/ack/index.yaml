@@ -22,6 +22,6 @@ entries:
     sources:
     - https://github.com/aws-controllers-k8s/secretsmanager-controller
     urls:
-    - https://github.com/dispiny/msa_voting_infra/manifest/tools/ack/secretsmanager-chart-1.0.3.tgz
+    - https://github.com/dispiny/msa_voting_infra/raw/refs/heads/master/tools/ack/secretsmanager-chart-1.0.3.tgz
     version: 1.0.3
 generated: "2025-02-19T10:25:42.10016435Z"
