@@ -5,26 +5,23 @@ resources:
   - '../../../base'
 
 patches:
+  - path: deployment.yaml
+    target:
+      kind: Deployment
+      name: deployment
+    options:
+      disableNameSuffixHash: true
   - path: service.yaml
     target:
       kind: Service
       name: service
+    options:
+      disableNameSuffixHash: true
   - path: ingress.yaml
     target:
       kind: Ingress
       name: voting-alb
-
-replacements:
-  - source:
-      kind: Deployment
-      name: deployment
-    targets:
-      - select:
-          kind: Deployment
-          name: deployment
-        fieldPaths:
-          - metadata.name
-        options:
-          create: true
+    options:
+      disableNameSuffixHash: true
 namePrefix: worker-
 namespace: vote
