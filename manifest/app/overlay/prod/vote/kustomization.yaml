@@ -5,10 +5,6 @@ resources:
   - '../../../base'
 
 patches:
-  - path: deployment.yaml
-    target:
-      kind: Deployment
-      name: deployment
   - path: service.yaml
     target:
       kind: Service
@@ -17,5 +13,18 @@ patches:
     target:
       kind: Ingress
       name: voting-alb
+
+replacements:
+  - source:
+      kind: Deployment
+      name: deployment
+    targets:
+      - select:
+          kind: Deployment
+          name: deployment
+        fieldPaths:
+          - metadata.name
+        options:
+          create: true
 namePrefix: vote-
 namespace: vote
