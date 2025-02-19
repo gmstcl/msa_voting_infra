@@ -10,15 +10,15 @@ spec:
   sources:
     - repoURL: https://github.com/dispiny/msa_voting_infra.git
       targetRevision: HEAD
-      path: overlay/prod/worker/
+      path: manifest/overlay/prod/worker/
       
     - repoURL: https://github.com/dispiny/msa_voting_infra.git
       targetRevision: HEAD
-      path: overlay/prod/result/
+      path: manifest/overlay/prod/result/
 
     - repoURL: https://github.com/dispiny/msa_voting_infra.git
       targetRevision: HEAD
-      path: overlay/prod/vote/
+      path: manifest/overlay/prod/vote/
 
   project: default
   syncPolicy:
