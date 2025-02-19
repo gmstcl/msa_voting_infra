@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: alb-ingress-controller
+  namespace: argocd
+spec:
+  destination:
+    namespace: kube-system
+    server: https://kubernetes.default.svc
+  source:
+    path: ''
+    repoURL: https://aws.github.io/eks-charts
+    targetRevision: 1.11.0
+    chart: aws-load-balancer-controller
+    helm:
+      values: ''
+      parameters:
+        - name: clusterName
+          value: demo-cluster
+        - name: serviceAccount.name
+          value: aws-load-balancer-controller
+        - name: serviceAccount.create
+          value: 'false'
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true
