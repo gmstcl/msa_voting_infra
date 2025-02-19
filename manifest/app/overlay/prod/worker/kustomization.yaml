@@ -9,19 +9,13 @@ patches:
     target:
       kind: Deployment
       name: deployment
-    options:
-      disableNameSuffixHash: true
   - path: service.yaml
     target:
       kind: Service
       name: service
-    options:
-      disableNameSuffixHash: true
   - path: ingress.yaml
     target:
       kind: Ingress
       name: voting-alb
-    options:
-      disableNameSuffixHash: true
 namePrefix: worker-
 namespace: vote
