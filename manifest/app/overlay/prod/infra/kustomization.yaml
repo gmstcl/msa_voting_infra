@@ -12,6 +12,9 @@ secretGenerator:
   files:
   - db_connection
 
+generatorOptions:
+  disableNameSuffixHash: true
+
 patches:
   - path: ingress.yaml
     target:
