@@ -4,5 +4,5 @@ metadata:
   name: result-service
 spec:
   selector:
-    version: 1.0
+    version: "1.0"
     type: result
